@@ -1,9 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+// add cors as a middleware
+app.use(cors());
 
 const posts = {};
 

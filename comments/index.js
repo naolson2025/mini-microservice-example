@@ -1,9 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+// add cors as a middleware, that sets the header to allow requests from any origin
+app.use(cors());
 
 const commentsByPostId = {};
 
