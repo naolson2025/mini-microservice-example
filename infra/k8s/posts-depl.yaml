@@ -19,3 +19,18 @@ spec:
           image: nick2025/posts
           ports:
             - containerPort: 4000
+---
+# posts Cluster IP service object
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-clusterip-srv
+spec:
+  selector:
+    app: posts
+  type: ClusterIP
+  ports:
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
